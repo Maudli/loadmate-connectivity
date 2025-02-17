@@ -51,7 +51,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <img src="/lovable-uploads/7f3bfe04-4cd4-44b9-91e0-af6d7058545b.png" alt="LOADMATE Logo" className="w-8 h-8" />
+              <img src="/lovable-uploads/B.png" alt="LOADMATE Logo" className="w-8 h-8" />
               <span className="font-bold text-lg">
                 <span className="text-black">LOAD</span>
                 <span className="text-primary">MATE</span>
@@ -86,7 +86,7 @@ const Index = () => {
           duration: 0.5
         }} className="max-w-4xl">
             <div className="flex flex-col items-center justify-center mb-8">
-              <img alt="LOADMATE Logo" className="w-24 h-24 mb-4" src="/lovable-uploads/7f3bfe04-4cd4-44b9-91e0-af6d7058545b.png" />
+              <img alt="LOADMATE Logo" className="w-24 h-24 mb-4" src="/lovable-uploads/B.png" />
               <span className="text-3xl font-bold">
                 <span className="text-black">LOAD</span>
                 <span className="text-green-400">MATE</span>
