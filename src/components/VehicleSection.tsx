@@ -16,7 +16,8 @@ interface Vehicle {
 const vehicles: Vehicle[] = [
   {
     name: "Mini Auto",
-    image: "/mini.png",
+    image: "/https://i.ibb.co/DfcHYhcK/mini.png
+",
     capacity: "350-500 kg",
     baseFare: 50,
     perKm: 10,
