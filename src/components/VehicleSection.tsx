@@ -28,7 +28,7 @@ const vehicles: Vehicle[] = [
   },
   {
     name: "Pickup Van",
-    image: "/placeholder.svg",
+    image: "/pickup.svg",
     capacity: "700-1000 kg",
     baseFare: 80,
     perKm: 12,
@@ -64,7 +64,7 @@ const vehicles: Vehicle[] = [
   },
   {
     name: "Heavy-Duty Truck",
-    image: "/heavy.svg",
+    image: "/32_feet_sxl.svg",
     capacity: "5 - 7 tonnes",
     baseFare: 400,
     perKm: 20,
@@ -76,7 +76,7 @@ const vehicles: Vehicle[] = [
   },
   {
     name: "Large Container Truck",
-    image: "/32_feet_sxl.svg",
+    image: "/container.svg",
     capacity: "10+ tonnes",
     baseFare: "Custom",
     perKm: "Quote",
