@@ -1,17 +1,22 @@
+
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Truck, ArrowRight, Leaf, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VehicleSection from "@/components/VehicleSection";
+
 const Index = () => {
   const [isHovered, setIsHovered] = useState(false);
   const howItWorksRef = useRef<HTMLElement>(null);
   const vehiclesRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
     ref.current?.scrollIntoView({
       behavior: "smooth"
     });
   };
+
   const benefits = [{
     icon: <Building2 className="w-6 h-6 text-primary" />,
     title: "For Businesses",
@@ -25,6 +30,7 @@ const Index = () => {
     title: "For Cities",
     description: "Reduced congestion and emissions"
   }];
+
   const steps = [{
     number: "01",
     title: "Resource Pooling",
@@ -38,11 +44,38 @@ const Index = () => {
     title: "Multi-Load Trips",
     description: "Maximize vehicle capacity and efficiency"
   }];
+
   return <div className="min-h-screen overflow-x-hidden">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-2">
+              <img src="/lovable-uploads/7f3bfe04-4cd4-44b9-91e0-af6d7058545b.png" alt="LOADMATE Logo" className="w-8 h-8" />
+              <span className="font-bold text-lg">
+                <span className="text-black">LOAD</span>
+                <span className="text-primary">MATE</span>
+              </span>
+            </div>
+            <nav className="hidden md:flex items-center gap-8">
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-600 hover:text-primary transition-colors">
+                Home
+              </button>
+              <button onClick={() => scrollToSection(vehiclesRef)} className="text-gray-600 hover:text-primary transition-colors">
+                Book
+              </button>
+              <button onClick={() => scrollToSection(aboutRef)} className="text-gray-600 hover:text-primary transition-colors">
+                About Us
+              </button>
+            </nav>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-green-50 to-white -z-10" />
-        <div className="container mx-auto px-4 py-32 flex flex-col items-center text-center gap-8">
+        <div className="container mx-auto px-4 py-20 flex flex-col items-center text-center gap-8">
           <motion.div initial={{
           opacity: 0,
           y: 20
@@ -54,7 +87,10 @@ const Index = () => {
         }} className="max-w-4xl">
             <div className="flex flex-col items-center justify-center mb-8">
               <img alt="LOADMATE Logo" className="w-24 h-24 mb-4" src="/lovable-uploads/7f3bfe04-4cd4-44b9-91e0-af6d7058545b.png" />
-              <span className="text-3xl font-bold text-green-400">LOADMATE</span>
+              <span className="text-3xl font-bold">
+                <span className="text-black">LOAD</span>
+                <span className="text-green-400">MATE</span>
+              </span>
             </div>
             <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6 inline-block">
               Welcome to LOADMATE
@@ -151,6 +187,24 @@ const Index = () => {
       {/* Vehicle Selection Section */}
       <section ref={vehiclesRef}>
         <VehicleSection />
+      </section>
+
+      {/* About Us Section */}
+      <section ref={aboutRef} className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Us</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              At LOADMATE, we're revolutionizing urban logistics through innovative technology and sustainable solutions. Our platform connects businesses with reliable transporters, optimizing delivery routes and reducing urban congestion.
+            </p>
+            <p className="text-lg text-gray-600 mb-8">
+              Founded with a vision to make logistics more efficient and environmentally friendly, we leverage cutting-edge technology to provide seamless, cost-effective delivery solutions for businesses of all sizes.
+            </p>
+            <p className="text-lg text-gray-600">
+              Our commitment to sustainability and efficiency drives us to continuously innovate and improve our services, making urban deliveries smarter, faster, and more eco-friendly.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* CTA Section */}
