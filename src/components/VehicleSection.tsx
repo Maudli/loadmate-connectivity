@@ -16,7 +16,7 @@ interface Vehicle {
 const vehicles: Vehicle[] = [
   {
     name: "Mini Auto",
-    image: "/https://i.ibb.co/DfcHYhcK/mini.png",
+    image: "/mini.svg",
     capacity: "350-500 kg",
     baseFare: 50,
     perKm: 10,
@@ -40,7 +40,7 @@ const vehicles: Vehicle[] = [
   },
   {
     name: "Light Commercial Vehicle",
-    image: "/placeholder.svg",
+    image: "/light.svg",
     capacity: "1.5 - 2.5 tonnes",
     baseFare: 150,
     perKm: 15,
@@ -52,7 +52,7 @@ const vehicles: Vehicle[] = [
   },
   {
     name: "Medium Truck",
-    image: "/placeholder.svg",
+    image: "/medium.svg",
     capacity: "3 - 4 tonnes",
     baseFare: 250,
     perKm: 18,
@@ -64,7 +64,7 @@ const vehicles: Vehicle[] = [
   },
   {
     name: "Heavy-Duty Truck",
-    image: "/placeholder.svg",
+    image: "/heavy.svg",
     capacity: "5 - 7 tonnes",
     baseFare: 400,
     perKm: 20,
@@ -76,7 +76,7 @@ const vehicles: Vehicle[] = [
   },
   {
     name: "Large Container Truck",
-    image: "/placeholder.svg",
+    image: "/32_feet_sxl.svg",
     capacity: "10+ tonnes",
     baseFare: "Custom",
     perKm: "Quote",
