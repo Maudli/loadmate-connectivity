@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Truck, ArrowRight, Leaf, Building2 } from "lucide-react";
@@ -62,12 +61,13 @@ const Index = () => {
             transition={{ duration: 0.5 }}
             className="max-w-4xl"
           >
-            <div className="flex items-center justify-center mb-8">
-              <div className="flex items-center gap-2 text-2xl font-bold">
-                <Truck className="w-8 h-8 text-primary" />
-                <span className="text-gray-900">LOAD</span>
-                <span className="text-primary">MATE</span>
-              </div>
+            <div className="flex flex-col items-center justify-center mb-8">
+              <img
+                src="/lovable-uploads/71a815b8-8f4e-458f-8818-84fd3a70bee1.png"
+                alt="LOADMATE Logo"
+                className="w-24 h-24 mb-4"
+              />
+              <span className="text-3xl font-bold text-gray-900">LOADMATE</span>
             </div>
             <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6 inline-block">
               Welcome to LOADMATE
