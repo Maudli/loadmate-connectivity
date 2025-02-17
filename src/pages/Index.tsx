@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Truck, ArrowRight, Leaf, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,12 @@ import VehicleSection from "@/components/VehicleSection";
 
 const Index = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const howItWorksRef = useRef<HTMLElement>(null);
+  const vehiclesRef = useRef<HTMLElement>(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const benefits = [
     {
@@ -55,6 +62,13 @@ const Index = () => {
             transition={{ duration: 0.5 }}
             className="max-w-4xl"
           >
+            <div className="flex items-center justify-center mb-8">
+              <div className="flex items-center gap-2 text-2xl font-bold">
+                <Truck className="w-8 h-8 text-primary" />
+                <span className="text-gray-900">LOAD</span>
+                <span className="text-primary">MATE</span>
+              </div>
+            </div>
             <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6 inline-block">
               Welcome to LOADMATE
             </span>
@@ -72,6 +86,7 @@ const Index = () => {
                 className="bg-primary hover:bg-primary/90 text-white"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onClick={() => scrollToSection(vehiclesRef)}
               >
                 Get Started
                 <ArrowRight
@@ -84,6 +99,7 @@ const Index = () => {
                 size="lg"
                 variant="outline"
                 className="border-2 hover:bg-gray-50"
+                onClick={() => scrollToSection(howItWorksRef)}
               >
                 How It Works
               </Button>
@@ -93,7 +109,7 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 bg-white">
+      <section ref={howItWorksRef} className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -161,7 +177,9 @@ const Index = () => {
       </section>
 
       {/* Vehicle Selection Section */}
-      <VehicleSection />
+      <section ref={vehiclesRef}>
+        <VehicleSection />
+      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-primary relative overflow-hidden">
