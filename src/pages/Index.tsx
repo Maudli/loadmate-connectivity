@@ -1,8 +1,8 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Truck, ArrowRight, Leaf, DollarSign, Building2 } from "lucide-react";
+import { Truck, ArrowRight, Leaf, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import VehicleSection from "@/components/VehicleSection";
 
 const Index = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -159,6 +159,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Vehicle Selection Section */}
+      <VehicleSection />
 
       {/* CTA Section */}
       <section className="py-24 bg-primary relative overflow-hidden">
