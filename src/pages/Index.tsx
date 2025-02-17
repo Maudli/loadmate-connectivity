@@ -3,71 +3,58 @@ import { motion } from "framer-motion";
 import { Truck, ArrowRight, Leaf, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VehicleSection from "@/components/VehicleSection";
-
 const Index = () => {
   const [isHovered, setIsHovered] = useState(false);
   const howItWorksRef = useRef<HTMLElement>(null);
   const vehiclesRef = useRef<HTMLElement>(null);
-
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+    ref.current?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  const benefits = [
-    {
-      icon: <Building2 className="w-6 h-6 text-primary" />,
-      title: "For Businesses",
-      description: "Affordable, on-demand logistics with flexible pricing",
-    },
-    {
-      icon: <Truck className="w-6 h-6 text-primary" />,
-      title: "For Transporters",
-      description: "Increased earnings through optimized trips",
-    },
-    {
-      icon: <Leaf className="w-6 h-6 text-primary" />,
-      title: "For Cities",
-      description: "Reduced congestion and emissions",
-    },
-  ];
-
-  const steps = [
-    {
-      number: "01",
-      title: "Resource Pooling",
-      description: "Connect transporters with businesses seamlessly",
-    },
-    {
-      number: "02",
-      title: "Smart Routing",
-      description: "AI-driven optimization of delivery paths",
-    },
-    {
-      number: "03",
-      title: "Multi-Load Trips",
-      description: "Maximize vehicle capacity and efficiency",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen overflow-x-hidden">
+  const benefits = [{
+    icon: <Building2 className="w-6 h-6 text-primary" />,
+    title: "For Businesses",
+    description: "Affordable, on-demand logistics with flexible pricing"
+  }, {
+    icon: <Truck className="w-6 h-6 text-primary" />,
+    title: "For Transporters",
+    description: "Increased earnings through optimized trips"
+  }, {
+    icon: <Leaf className="w-6 h-6 text-primary" />,
+    title: "For Cities",
+    description: "Reduced congestion and emissions"
+  }];
+  const steps = [{
+    number: "01",
+    title: "Resource Pooling",
+    description: "Connect transporters with businesses seamlessly"
+  }, {
+    number: "02",
+    title: "Smart Routing",
+    description: "AI-driven optimization of delivery paths"
+  }, {
+    number: "03",
+    title: "Multi-Load Trips",
+    description: "Maximize vehicle capacity and efficiency"
+  }];
+  return <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-green-50 to-white -z-10" />
         <div className="container mx-auto px-4 py-32 flex flex-col items-center text-center gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }} className="max-w-4xl">
             <div className="flex flex-col items-center justify-center mb-8">
-              <img
-                src="/lovable-uploads/71a815b8-8f4e-458f-8818-84fd3a70bee1.png"
-                alt="LOADMATE Logo"
-                className="w-24 h-24 mb-4"
-              />
-              <span className="text-3xl font-bold text-gray-900">LOADMATE</span>
+              <img alt="LOADMATE Logo" className="w-24 h-24 mb-4" src="/lovable-uploads/7f3bfe04-4cd4-44b9-91e0-af6d7058545b.png" />
+              <span className="text-3xl font-bold text-green-400">LOADMATE</span>
             </div>
             <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6 inline-block">
               Welcome to LOADMATE
@@ -81,26 +68,11 @@ const Index = () => {
               delivery solutions.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onClick={() => scrollToSection(vehiclesRef)}
-              >
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={() => scrollToSection(vehiclesRef)}>
                 Get Started
-                <ArrowRight
-                  className={`ml-2 transition-transform duration-300 ${
-                    isHovered ? "translate-x-1" : ""
-                  }`}
-                />
+                <ArrowRight className={`ml-2 transition-transform duration-300 ${isHovered ? "translate-x-1" : ""}`} />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 hover:bg-gray-50"
-                onClick={() => scrollToSection(howItWorksRef)}
-              >
+              <Button size="lg" variant="outline" className="border-2 hover:bg-gray-50" onClick={() => scrollToSection(howItWorksRef)}>
                 How It Works
               </Button>
             </div>
@@ -121,14 +93,15 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="relative p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow"
-              >
+            {steps.map((step, index) => <motion.div key={step.number} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: index * 0.2
+          }} className="relative p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-4xl font-bold text-primary/20 mb-4">
                   {step.number}
                 </div>
@@ -136,8 +109,7 @@ const Index = () => {
                   {step.title}
                 </h3>
                 <p className="text-gray-600">{step.description}</p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -155,14 +127,15 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow"
-              >
+            {benefits.map((benefit, index) => <motion.div key={benefit.title} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: index * 0.2
+          }} className="p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow">
                 <div className="mb-4 inline-block p-3 bg-primary/10 rounded-lg">
                   {benefit.icon}
                 </div>
@@ -170,8 +143,7 @@ const Index = () => {
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -192,18 +164,13 @@ const Index = () => {
             <p className="text-lg mb-8 text-white/90">
               Join LOADMATE today and be part of the future of urban delivery.
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-primary hover:bg-gray-100"
-            >
+            <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
               Get Started Now
               <ArrowRight className="ml-2" />
             </Button>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
